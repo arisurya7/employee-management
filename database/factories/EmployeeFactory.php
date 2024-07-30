@@ -24,7 +24,7 @@ class EmployeeFactory extends Factory
             'username' => $this->faker->unique()->userName(),
             'password' => 'password',
             'date_join' => Carbon::now()->format('Y-m-d'),
-            'unit_id' => 1,
+            'unit_id' => Unit::factory()->create()->id,
             'is_admin' => 0
         ];
     }

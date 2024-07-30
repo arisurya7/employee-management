@@ -54,8 +54,8 @@
         <div id="collapseDataMaster" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data Master:</h6>
-                <a class="collapse-item" href="#">Data Unit</a>
-                <a class="collapse-item" href="#"  >Data Jabatan</a>
+                <a class="collapse-item" href="{{ route('unit.index') }}">Data Unit</a>
+                <a class="collapse-item" href="{{ route('position.index') }}"  >Data Jabatan</a>
             </div>
         </div>
     </li>
