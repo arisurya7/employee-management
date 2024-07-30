@@ -18,8 +18,7 @@ class EmployeeSeeder extends Seeder
 
 
         $adminEmployee = Employee::factory()->create([
-            'username' => 'admin', 
-            'password' => 'password', 
+            'username' => 'admin',
             'unit_id' => 1, 
             'is_admin' => 1
         ]);            

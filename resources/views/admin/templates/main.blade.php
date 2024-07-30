@@ -30,6 +30,9 @@
     <!-- CSS dataTables -->
     <link rel="stylesheet" href="{{ asset('sb-admin/vendor/datatables/dataTables.bootstrap4.min.css') }}">
     
+    {{-- Select2 --}}
+    <link rel="stylesheet" href="{{ asset('sb-admin/vendor/select2/package/dist/css/select2.min.css') }}">
+
     @yield('styles')
 
 </head>
@@ -121,6 +124,9 @@
     
     {{-- SweetAlert2  --}}
     <script src="{{ asset('sb-admin/vendor/sweetalert2/package/dist/sweetalert2.all.min.js') }}"></script>
+
+     {{-- Select2  --}}
+     <script src="{{ asset('sb-admin/vendor/select2/package/dist/js/select2.min.js') }}"></script>
 
 
 

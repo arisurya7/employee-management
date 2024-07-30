@@ -6,6 +6,7 @@ use App\Models\Employee;
 use App\Models\Unit;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Crypt;
 
 class EmployeeFactory extends Factory
 {
@@ -22,7 +23,7 @@ class EmployeeFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'username' => $this->faker->unique()->userName(),
-            'password' => 'password',
+            'password' => Crypt::encryptString('password'),
             'date_join' => Carbon::now()->format('Y-m-d'),
             'unit_id' => Unit::factory()->create()->id,
             'is_admin' => 0

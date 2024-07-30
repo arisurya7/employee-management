@@ -40,7 +40,7 @@
         </div>
     </li> --}}
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('pegawai.index') }}">
             <i class="fas fa-users"></i>
             <span>Pegawai</span></a>
     </li>

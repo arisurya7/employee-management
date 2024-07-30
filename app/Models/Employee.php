@@ -20,4 +20,8 @@ class Employee extends Model
         'is_admin'
     ];
 
+    public function position(){
+        return $this->hasMany(EmployeePosition::class);
+    }
+
 }

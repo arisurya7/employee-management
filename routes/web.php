@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,8 @@ Route::prefix('admin')->group(function(){
     Route::resource('/position', PositionController::class);
     Route::get('/position-datatable', [PositionController::class, 'datatable'])->name('position.datatable');
 
+    Route::resource('/pegawai', EmployeeController::class);
+    Route::get('/pegawai-datatable', [EmployeeController::class, 'datatable'])->name('pegawai.datatable');
+    Route::get('/search-unit', [EmployeeController::class, 'search_unit'])->name('search.unit');
+    Route::get('/search-position', [EmployeeController::class, 'search_position'])->name('search.position');
 });
