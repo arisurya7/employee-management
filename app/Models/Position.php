@@ -12,5 +12,5 @@ class Position extends Model
 
     protected $table = 'm_positions';
     protected $fillable = ['name'];
-    public $timestamps = false;
+    // public $timestamps = false;
 }

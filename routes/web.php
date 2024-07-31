@@ -24,6 +24,8 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function(){
     Route::get("/dashboard", [DashboardController::class, 'index'])->name('dashboard');
+    Route::get("/user-login", [DashboardController::class, 'datatable'])->name('user-login.datatable');
+    Route::get("/count-dashboard", [DashboardController::class, 'count_ajax'])->name('count.dashboard');
     
     Route::resource('/unit', UnitController::class);
     Route::get('/unit-datatable', [UnitController::class, 'datatable'])->name('unit.datatable');
