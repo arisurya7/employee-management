@@ -10,7 +10,7 @@ class EmployeeLoginLog extends Model
     use HasFactory;
 
     protected $table = 'employee_login_log';
-    protected $fillable = ['employee_id'];
+    protected $fillable = ['employee_id', 'created_at'];
     public $timestamps = false;
 
 }

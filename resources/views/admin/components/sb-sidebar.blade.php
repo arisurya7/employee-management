@@ -39,26 +39,29 @@
             </div>
         </div>
     </li> --}}
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('pegawai.index') }}">
-            <i class="fas fa-users"></i>
-            <span>Pegawai</span></a>
-    </li>
-    
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDataMaster"
-            aria-expanded="true" aria-controls="collapseDataMaster">
-            <i class="fas fa-database"></i>
-            <span>Data Master</span>
-        </a>
-        <div id="collapseDataMaster" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Data Master:</h6>
-                <a class="collapse-item" href="{{ route('unit.index') }}">Data Unit</a>
-                <a class="collapse-item" href="{{ route('position.index') }}"  >Data Jabatan</a>
+    @if (Session::get('user')->is_admin == 1)
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('pegawai.index') }}">
+                <i class="fas fa-users"></i>
+                <span>Pegawai</span></a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDataMaster"
+                aria-expanded="true" aria-controls="collapseDataMaster">
+                <i class="fas fa-database"></i>
+                <span>Data Master</span>
+            </a>
+            <div id="collapseDataMaster" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Data Master:</h6>
+                    <a class="collapse-item" href="{{ route('unit.index') }}">Data Unit</a>
+                    <a class="collapse-item" href="{{ route('position.index') }}"  >Data Jabatan</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
+    @endif
+    
 
    
     

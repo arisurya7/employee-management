@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
@@ -21,12 +22,17 @@ Route::get('/', function () {
     return redirect('admin/dashboard');
 });
 
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::prefix('admin')->group(function(){
+Route::middleware(['authcustom'])->group(function(){
     Route::get("/dashboard", [DashboardController::class, 'index'])->name('dashboard');
     Route::get("/user-login", [DashboardController::class, 'datatable'])->name('user-login.datatable');
     Route::get("/count-dashboard", [DashboardController::class, 'count_ajax'])->name('count.dashboard');
-    
+});
+
+Route::prefix('admin')->middleware(['admin'])->group(function(){
     Route::resource('/unit', UnitController::class);
     Route::get('/unit-datatable', [UnitController::class, 'datatable'])->name('unit.datatable');
 
